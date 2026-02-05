@@ -1,0 +1,153 @@
+:root {
+    --primary-color: #4F46E5;
+    /* Indigo-600 */
+    --primary-dark: #4338CA;
+    --secondary-color: #64748B;
+    /* Slate-500 */
+    --light-bg: #F1F5F9;
+    /* Slate-100 */
+    --border-color: #E2E8F0;
+    --text-primary: #1E293B;
+    --text-secondary: #0F172A;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+}
+
+.invoice-container {
+    background: white;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    /* Soft shadow */
+    transition: all 0.3s ease;
+}
+
+/* INPUTS */
+.form-control,
+.form-select {
+    border-color: var(--border-color);
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.card {
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* ANIMATIONS */
+.item-row {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TEMPLATES */
+
+/* Modern: Colored header */
+.invoice-modern .row.justify-content-between.mb-5:first-child {
+    background: var(--primary-color);
+    margin: -20mm -20mm 2rem -20mm;
+    padding: 2.5rem 20mm;
+    color: white;
+    border-radius: 0;
+}
+
+.invoice-modern .text-primary {
+    color: white !important;
+}
+
+.invoice-modern .text-secondary {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.invoice-modern .text-dark {
+    color: white !important;
+}
+
+/* Minimal: No borders, mono font details */
+.invoice-minimal {
+    box-shadow: none;
+    border: 1px solid #eee;
+}
+
+.invoice-minimal .table thead.border-bottom {
+    border-bottom: 2px solid #000 !important;
+}
+
+.invoice-minimal h2.text-secondary {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .invoice-container {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .invoice-modern .row.justify-content-between.mb-5:first-child {
+        margin: -20px -20px 2rem -20px;
+        padding: 2rem 20px;
+    }
+}
+
+/* UTILS */
+.fw-medium {
+    font-weight: 500;
+}
+
+.bg-light {
+    background-color: var(--light-bg) !important;
+}
